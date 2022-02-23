@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: nck-trampoline-bot
+    build:
+      context: .
+      dockerfile: docker/nck-trampoline-bot/Dockerfile
+    image: nck-trampoline-bot/app
+    ports:
+      - "8080:8080"
+      - "5005:5005" # for remote debug
+    networks:
+      - container-link
+    tty: true
+    volumes:
+      - ./nck-trampoline-bot:/app:cached
+
+networks:
+  default:
+    name: bridge
+  container-link:
+    name: trampoline-chatbot.docker.internal

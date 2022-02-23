@@ -1,0 +1,16 @@
+[versions]
+kotlin = "1.6.10"
+springframework = "2.6.3"
+
+[libraries]
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springframework" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+
+springframework-boot = { id = "org.springframework.boot", version.ref = "springframework" }
+spring-dependency-management = { id = "io.spring.dependency-management", version = "1.0.11.RELEASE" }
